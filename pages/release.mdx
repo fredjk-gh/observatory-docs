@@ -7,6 +7,25 @@ description: Tool for reading/monitoring Elite Dangerous journals for interestin
 
 ## Latest 
 
+### v1.4.0 - Plug It In
+
+Release versions:
+  * [Installer](https://github.com/Xjph/ObservatoryCore/releases/download/v1.4.0/ObservatorySetup.exe)
+  * [Portable](https://github.com/Xjph/ObservatoryCore/releases/download/v1.4.0/ObservatoryPortable.zip)
+
+This update comes with some significant changes under the hood for plugin developers, most notably a new plugin bundling format inside `.eop` files (Elite Observatory Plugin) which allows developers to package .NET build outout as-is into plugin bundles.
+
+These new plugins can also be updated in-place without needing to close Observatory first, though a restart is still necessary in order to load the new version.
+
+Users should not notice any difference in normal usage, and existing plugins will continute to work as before.
+
+- Add `WasFootfalled` and `WasLogged` to `Scan` and `ScanOrganic` events respectively
+- Fix issue where ancillary files would incorrectly be included in retroactive pre-read as if current
+- Fix datatype issues with squadron contribution values
+- Complete rework of plugin loading to avoid unpacking .eop bundles and holding files open
+- Improved plugin update check to provide direct link to update and allow plugin self-update
+- Explorer "Eccentric Orbit" built-in check now indicates whether planet is landable
+
 ### v1.3.0 - On Top Of Things
 
 Release versions:
